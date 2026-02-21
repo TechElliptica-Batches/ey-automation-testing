@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EY-Testometer Session</title>
+</head>
+<body>
+<div>  Name :   <input type = "text" id="name" />  </div>
+
+<input type="date" id="calendar" />
+
+<button onclick="printMyName()">Click me </button>
+<label id="nameprint"></label>
+
+<script>
+
+    function printMyName(){
+        setTimeout( () => {
+        document.getElementById('nameprint').innerHTML = "<span id=\"namevalue\">Vaibhav Singh</span>";
+        } , 2000);
+    }
+
+</script>
+</body>
+</html>

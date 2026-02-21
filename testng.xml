@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Ey-Demo Suite" verbose="1">
+    <test name="Regression">
+
+        <groups>
+            <run>
+                <include name="sanity"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="tests.TestDemo" />
+          </classes>
+    </test>
+</suite>
