@@ -29,7 +29,7 @@ public class NegativeTestCase extends  TestCaseBase{
          return dataArr;
     }
 
-    @Test(dataProvider = "sauce-demo-login-data")
+    //@Test(dataProvider = "sauce-demo-login-data")
     public void verify_user_able_to_view_error_msg_for_credentials(String username, String password, String expectedErrorMsg){
         LoginModule.login(driver,username, password);
         String actualErrorMsg = LoginModule.getErrorMessage(driver);

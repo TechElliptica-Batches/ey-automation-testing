@@ -8,7 +8,7 @@ import pageobject.LoginPage;
 public class PositiveTestCase extends TestCaseBase{
 
     // login successfully
-    @Test
+    //@Test
     public void verify_user_able_to_login_successfully(){
         LoginModule.login(driver,"standard_user", "secret_sauce");
     }

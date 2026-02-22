@@ -1,12 +1,14 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class TestCaseBase {
 
-    ChromeDriver driver;
+    public static WebDriver driver;
 
     @BeforeMethod(alwaysRun = true)
     public void setupTestCase(){
@@ -19,4 +21,21 @@ public class TestCaseBase {
     public void afterTestCase(){
         driver.close();
     }
+
+    public static void openBrowser(String browsername){
+        if(browsername.equals("chrome")){
+            driver = new ChromeDriver();
+        }else if(browsername.equals("edge")){
+            driver = new EdgeDriver();
+        }
+    }
+
+    public static void openUrl(String url){
+        //String enviornment=  System.getProperty("env");
+       // if(enviornment.equals("qa")) {
+            driver.get(url);
+        //}
+    }
+
+
 }

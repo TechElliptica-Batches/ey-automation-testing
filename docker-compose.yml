@@ -1,0 +1,55 @@
+# MySQL + phpMyAdmin — one database, viewable in phpMyAdmin
+# Run from project root: docker-compose up -d
+# phpMyAdmin: http://localhost:8080 — login: root/root or ey-training_user/ey-training_pass
+
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: ey-training-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: ey-training
+      MYSQL_USER: ey-training_user
+      MYSQL_PASSWORD: ey-training_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/init/02-root-remote.sql:/docker-entrypoint-initdb.d/02-root-remote.sql
+    networks:
+      - db-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: ey-training-phpmyadmin
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: ey-training_user
+      PMA_PASSWORD: ey-training_pass
+      UPLOAD_LIMIT: 64M
+    networks:
+      - db-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  db-network:
+    driver: bridge
