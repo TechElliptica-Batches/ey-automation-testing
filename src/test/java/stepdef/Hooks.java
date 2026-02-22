@@ -15,12 +15,13 @@ public class Hooks {
     public static void setup(){
         try{
             String env = System.getProperty("env");
+            String browser = System.getProperty("browser");
             System.out.println("loading " + env+ ".properties file");
+            System.out.println("browser : "  +browser + " loading.");
 
             File fl =new File(System.getProperty("user.dir")+ "/config/"+env+".properties");
             Properties prop = new Properties();
             prop.load(new FileInputStream(fl));
-            String browser = prop.getProperty("browser");
             String url = prop.getProperty("url");
             System.out.println(browser);
             System.out.println(url);
