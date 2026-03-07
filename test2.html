@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EY-Testometer Session</title>
+</head>
+<body>
+<div style="margin-left:100px;">
+
+    <textarea id="txt" style="width: 1200px; height:300px;"></textarea>
+
+<input type="date" id="calendar" />
+
+<button onclick="printMyName()">Click me </button>
+<label id="nameprint"></label>
+<div>  Name :   <input type = "text" id="name" />  </div>
+
+    <div id="host-element"></div>
+    <script>
+        // Select host element
+        const host = document.getElementById("host-element");
+
+        // Attach shadow root
+        const shadowRoot = host.attachShadow({ mode: "open" });
+
+        // Add content inside shadow DOM
+        shadowRoot.innerHTML = `
+            <style>
+                p {
+                    color: red;
+                    font-size: 20px;
+                }
+            </style>
+            <label>Inside Shadow dom</label>
+            <input type="text" id="insideshadowinput" />
+        `;
+    </script>
+
+<iframe id="saucedemo" width="1000" height="800" src="https://www.saucedemo.com/"></iframe>
+<BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>
+
+    <a href="https://www.google.com" >Google</a>
+    <BR/><BR/><BR/><BR/><BR/><BR/>
+
+
+</div>
+    <script>
+
+    function printMyName(){
+        setTimeout( () => {
+        document.getElementById('nameprint').innerHTML = "<span id=\"namevalue\">Vaibhav Singh</span>";
+        } , 2000);
+    }
+
+</script>
+</body>
+</html>

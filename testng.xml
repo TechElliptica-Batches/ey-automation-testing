@@ -5,12 +5,12 @@
 
         <groups>
             <run>
-                <include name="sanity"/>
+                <include name="sanity2345"/>
             </run>
         </groups>
 
         <classes>
-            <class name="tests.TestDemo" />
+            <class name="tests.PositiveTestCase" />
           </classes>
     </test>
 </suite>

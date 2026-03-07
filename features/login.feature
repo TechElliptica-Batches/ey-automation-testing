@@ -2,7 +2,7 @@ Feature: login related scenario
 
   # background will always execute before every scenario
   # Scenario outline
-
+# SDET
    @postive-scenario @sanity
   Scenario: validate valid credentials
     When i enter "standard_user" in username field

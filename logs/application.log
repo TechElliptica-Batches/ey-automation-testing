@@ -1,0 +1,19 @@
+2026-03-07 14:33:00 [main] INFO  tests.PositiveTestCase - info
+2026-03-07 14:33:00 [main] WARN  tests.PositiveTestCase - warn
+2026-03-07 14:33:00 [main] ERROR tests.PositiveTestCase - error
+2026-03-07 14:33:00 [main] FATAL tests.PositiveTestCase - fatal
+2026-03-07 14:33:00 [main] INFO  tests.PositiveTestCase - I am executing login success scenario
+2026-03-07 14:34:05 [main] TRACE tests.PositiveTestCase - trace
+2026-03-07 14:34:05 [main] DEBUG tests.PositiveTestCase - debug
+2026-03-07 14:34:05 [main] INFO  tests.PositiveTestCase - info
+2026-03-07 14:34:05 [main] WARN  tests.PositiveTestCase - warn
+2026-03-07 14:34:05 [main] ERROR tests.PositiveTestCase - error
+2026-03-07 14:34:05 [main] FATAL tests.PositiveTestCase - fatal
+2026-03-07 14:34:05 [main] INFO  tests.PositiveTestCase - I am executing login success scenario
+2026-03-07 14:34:05 [main] TRACE module.LoginModule - login method execution started
+2026-03-07 14:34:05 [main] DEBUG module.LoginModule - username : standard_user
+2026-03-07 14:34:05 [main] DEBUG module.LoginModule - password : secret_sauce
+2026-03-07 14:34:06 [main] DEBUG module.LoginModule - username entered successfully
+2026-03-07 14:34:06 [main] DEBUG module.LoginModule - password entered successfully
+2026-03-07 14:34:06 [main] DEBUG module.LoginModule - button clicked successfully
+2026-03-07 14:34:06 [main] TRACE module.LoginModule - login method execution completed
