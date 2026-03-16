@@ -18,6 +18,7 @@ public class LoginModule {
         driver.findElement(LoginPage.txtbox_password).sendKeys(password);
         log.debug("password entered successfully");
         driver.findElement(LoginPage.btn_login).click();
+
         log.debug("button clicked successfully");
         log.trace("login method execution completed");
     }
